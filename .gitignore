@@ -1,6 +1,9 @@
 # ignore .env files
 .env
 
+# ignore secret file
+k8s/k8s_secrets.yml*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

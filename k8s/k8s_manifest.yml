@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: jasper-twitch
+spec:
+   containers:
+   - name: jasper-twitch 
+     image: "devopswithbrian/jasper-twitch:latest"
+     tty: true
+     env:
+       - name: PYTHONUNBUFFERED
+         value: "0"
+       - name: TOKEN
+         valueFrom:
+           secretKeyRef:
+             name: jaspersecrets
+             key: TOKEN
+       - name: CLIENT_ID
+         valueFrom:
+           secretKeyRef:
+             name: jaspersecrets
+             key: CLIENT_ID
+       - name: CHANNEL
+         valueFrom:
+           secretKeyRef:
+             name: jaspersecrets
+             key: CHANNEL
+       - name: RASA_URL
+         valueFrom:
+           secretKeyRef:
+             name: jaspersecrets
+             key: RASA_URL
