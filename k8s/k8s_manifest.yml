@@ -6,6 +6,7 @@ spec:
    containers:
    - name: jasper-twitch 
      image: "devopswithbrian/jasper-twitch:latest"
+     imagePullPolicy: Always
      tty: true
      env:
        - name: PYTHONUNBUFFERED
