@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jasper-twitch
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: jasper-twitch
+  template:
+    metadata:
+      labels:
+        app: jasper-twitch
+    spec:
+      containers:
+      - name: jasper-twitch 
+        image: "devopswithbrian/jasper-twitch:latest"
+        imagePullPolicy: Always
+        tty: true
+        env:
+          - name: PYTHONUNBUFFERED
+            value: "0"
+          - name: TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: jaspersecrets
+                key: TOKEN
+          - name: CLIENT_ID
+            valueFrom:
+              secretKeyRef:
+                name: jaspersecrets
+                key: CLIENT_ID
+          - name: CHANNEL
+            valueFrom:
+              secretKeyRef:
+                name: jaspersecrets
+                key: CHANNEL
+          - name: RASA_URL
+            valueFrom:
+              secretKeyRef:
+                name: jaspersecrets
+                key: RASA_URL
