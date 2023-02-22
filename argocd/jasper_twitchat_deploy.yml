@@ -24,20 +24,20 @@ spec:
           - name: TOKEN
             valueFrom:
               secretKeyRef:
-                name: jaspersecrets
+                name: jasper-prd
                 key: TOKEN
           - name: CLIENT_ID
             valueFrom:
               secretKeyRef:
-                name: jaspersecrets
+                name: jasper-prd
                 key: CLIENT_ID
           - name: CHANNEL
             valueFrom:
               secretKeyRef:
-                name: jaspersecrets
+                name: jasper-prd
                 key: CHANNEL
           - name: RASA_URL
             valueFrom:
               secretKeyRef:
-                name: jaspersecrets
+                name: jasper-prd
                 key: RASA_URL
