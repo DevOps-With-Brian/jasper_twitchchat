@@ -101,7 +101,7 @@ class Bot(commands.Bot):
         output = version.predict(**inputs)
 
         # Send Diffusion Pic URL
-        await ctx.send(f'Ok {ctx.author.name} just a sec while I generate that...')
+        await ctx.send(f'Ok @{ctx.author.name} just a sec while I generate that...')
         await ctx.send(f'Your stable diffusion image url @{ctx.author.name} is {output[0]}')
 
     @commands.command(name='jasper')
