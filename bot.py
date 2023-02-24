@@ -61,7 +61,7 @@ class Bot(commands.Bot):
 
 
     @commands.command(name='diffusion')
-    async def hello(self, ctx: commands.Context,*,message):
+    async def diffusion(self, ctx: commands.Context,*,message):
         print(ctx.author.name)
         
         model = replicate.models.get("stability-ai/stable-diffusion")
