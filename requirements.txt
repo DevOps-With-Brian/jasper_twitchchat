@@ -1,3 +1,4 @@
 twitchio==2.5.0
 python-dotenv==0.21.1
 requests==2.28.2
+replicate==0.5.0
