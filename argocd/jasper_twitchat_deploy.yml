@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: jasper-twitch 
-        image: "devopswithbrian/jasper-twitch:latest"
+        image: "devopswithbrian/jasper-twitch:0.2.0"
         imagePullPolicy: Always
         tty: true
         env:
