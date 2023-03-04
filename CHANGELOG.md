@@ -1,3 +1,9 @@
+## 0.3.0 (2023-03-04)
+
+### Feat
+
+- **diffusion**: updating the diffusion scheduler value
+
 ## 0.2.0 (2023-03-04)
 
 ### Feat
