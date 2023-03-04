@@ -1,3 +1,12 @@
+## 0.2.0 (2023-03-04)
+
+### Feat
+
+- **testing**: new test feat
+- **testing**: new test feat
+- **testing**: new test feat
+- **testing**: triggering a version bump
+
 ## 0.1.0 (2023-03-03)
 
 ### Feat
