@@ -7,6 +7,7 @@ on:
 
 jobs:
   docker:
+    if: "startsWith(github.event.head_commit.message, 'bump:')"
     runs-on: ubuntu-latest
     steps:
       -
@@ -24,10 +25,22 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_LOGIN }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD  }}
+      - 
+        name: Install Commitizen
+        run: pip install -U Commitizen
+      - 
+        name: Set Version
+        run: |
+          echo "COMMITIZEN_VER=$(cz version -p)" >> $GITHUB_ENV
+        id: commitizen-version
+      - 
+        name: Echo Current Version
+        run: |
+          echo "The current version is: ${{ env.COMMITIZEN_VER }}"
       -
         name: Build and push
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          tags: devopswithbrian/jasper-twitch:latest
+          tags: devopswithbrian/jasper-twitch:latest,devopswithbrian/jasper-twitch:${{ env.COMMITIZEN_VER }}
